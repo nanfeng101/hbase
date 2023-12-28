@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{css/bootstrap-theme.min.css}" />
+  <title>南枫</title>
+</head>
+<body>
+<div Style="background-color: rgba(216, 216, 216, 0.968);display: inline-flex;">
+  <div style="position: absolute;">
+    <img width="270px" height="1000px" th:src="12.png">
+  </div>
+  <div style="border-radius: 20px;background-color: rgb(255, 255, 255);margin-left: 270px;height: auto;width:1110px;">
+    <div class="box-a1">
+      <img style="border-radius: 20px" width="200px" height="120px" th:src="nanfeng.jpg">
+    </div>
+    <div class="box-a2">
+      <div class="box-a2-b1">
+        <input type="text" placeholder="请输入要搜索的物品"/>
+        <button>搜索</button>
+      </div>
+    </div>
+    <div>
+      <div class="box-a3">
+        <p style="color: black;font-size: 18px;font-weight: bolder;padding-left: 20px;padding-top: 15px;display: block;">分类</p>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="吊带.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/nuzhuang(typename='女装',id=${useradmin.id})}" th:target="_blank"><span>女装&nbsp;&nbsp;/&nbsp;&nbsp;内衣&nbsp;&nbsp;/&nbsp;&nbsp;奢品</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="化妆品.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/cosmetics(typename='美妆',id=${useradmin.id})}" th:target="_blank"><span>美妆&nbsp;&nbsp;/&nbsp;&nbsp;饰品&nbsp;&nbsp;/&nbsp;&nbsp;洗护</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="男装.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/man(typename='男装',id=${useradmin.id})}" th:target="_blank"><span>男装&nbsp;&nbsp;/&nbsp;&nbsp;运动&nbsp;&nbsp;/&nbsp;&nbsp;手表</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="手机.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/shouji(typename='手机',id=${useradmin.id})}" th:target="_blank"><span>手机&nbsp;&nbsp;/&nbsp;&nbsp;数码&nbsp;&nbsp;/&nbsp;&nbsp;电脑</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="家用电器.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/electric(typename='电器',id=${useradmin.id})}" th:target="_blank"><span>家装&nbsp;&nbsp;/&nbsp;&nbsp;电器&nbsp;&nbsp;/&nbsp;&nbsp;车品</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="食品类目.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/food(typename='食品',id=${useradmin.id})}" th:target="_blank"><span>食品&nbsp;&nbsp;/&nbsp;&nbsp;生鲜&nbsp;&nbsp;/&nbsp;&nbsp;水果</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="医药箱.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/medicine(typename='医药',id=${useradmin.id})}" th:target="_blank"><span>医药&nbsp;&nbsp;/&nbsp;&nbsp;保健&nbsp;&nbsp;/&nbsp;&nbsp;调养</span></a></td>
+          </th>
+        </div>
+        <div class="box-a3-b1">
+          <th>
+          <td><img width="15px" height="15px" th:src="玩具.png"></td>&nbsp;&nbsp;
+          <td><a th:href="@{/wanju(typename='玩具',id=${useradmin.id})}" th:target="_blank"><span>玩具&nbsp;&nbsp;/&nbsp;&nbsp;高达&nbsp;&nbsp;/&nbsp;&nbsp;乐高</span></a></td>
+          </th>
+        </div>
+      </div>
+      <div class="box-a4">
+        <div class="box-a4-b1">
+          <a><p class="q1" style="color: rgb(239, 112, 78);padding-left:40px;">天猫&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p class="q1" style="color: rgb(215, 89, 54)">&nbsp;&nbsp;&nbsp;聚划算&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p class="q1" style="color: rgb(27, 222, 53);">&nbsp;&nbsp;&nbsp;天跑超市&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p>&nbsp;&nbsp;&nbsp;司法拍卖&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p>&nbsp;&nbsp;&nbsp;飞猪游玩&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p>&nbsp;&nbsp;&nbsp;天天特卖&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p>&nbsp;&nbsp;&nbsp;淘宝直播&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p>&nbsp;&nbsp;&nbsp;极有家&nbsp;&nbsp;&nbsp;</p></a>
+          <p>|</p>
+          <a><p>&nbsp;&nbsp;&nbsp;特大折扣</p></a>
+        </div>
+        <div class="box-a4-b2">
+          <!-- 轮播图 -->
+          <div class="box-a4-b2-c1">
+            <div class="shell">
+              <ul class="images">
+                <li class="img"></li>
+                <li class="img"></li>
+                <li class="img"></li>
+                <li class="img"></li>
+                <li class="img"></li>
+              </ul>
+              <ul class="min">
+                <li class="m"></li>
+                <li class="m"></li>
+                <li class="m"></li>
+                <li class="m"></li>
+                <li class="m"></li>
+              </ul>
+              <div class="button">
+                <div class="button-left">&lt;</div>
+                <div class="button-right">&gt;</div>
+              </div>
+            </div>
+            <div class="bg"></div>
+          </div>
+          <!-- 、、 -->
+          <div class="box-a4-b2-c2">
+            <div class="box-a4-b2-c2-e1">
+              <img width="60px" height="60px" th:src="${useradmin.bpicture}" style="border-radius: 50%;">
+              <p style="margin-top: 10px;margin-left: 1px" th:text="${useradmin.bemail}"></p>
+            </div>
+            <div class="box-a4-b2-c2-e2">
+              <a th:href="@{/}"><button style="background-color: coral;border-radius: 30px;font-size: 17px;width: 70px;height: 40px;">登录</button></a>
+
+            </div>
+            <div class="box-a4-b2-c2-e3">
+              <a><button style="border-radius: 30px;font-size: 17px;width: 70px;height: 40px;">注册</button></a>
+            </div>
+            <div class="box-a4-b2-c2-e4">
+              <a th:href="@{/head}"><button style="background-color: #fff;border:2px solid rgb(255, 128, 0);;color: rgb(210, 69, 30);border-radius: 30px;font-size: 17px;width: 70px;height: 40px;">退出</button></a>
+            </div>
+            <div class="box-a4-b2-c2-e5">
+              <a><img width="30px" height="30px" th:src="收藏.png">
+                <p>收藏</p></a>
+            </div>
+            <div class="box-a4-b2-c2-e6">
+              <a th:href="@{/adminLogin}" th:target="_blank"><img width="30px" height="30px" th:src="后台管理.png">
+                <p>后台</p></a>
+            </div>
+            <div class="box-a4-b2-c2-e7">
+              <a th:href="@{/gouwuche(id=${useradmin.id})}" th:target="_blank"><img width="30px" height="30px" th:src="购物车.png">
+                <p>购物车</p></a>
+            </div>
+            <div class="box-a4-b2-c2-e8">
+              <a th:href="@{/no-pay-money(status=1)}" th:target="_blank"><img width="30px" height="30px" th:src="订单.png">
+                <p>订单</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-a5">
+        <p style="color: black;font-size: 30px;">猜你喜欢</p>
+        <div class="box-a5-b1" th:each="goods01:${goods2}">
+          <div style="margin-left: 10px;margin-top: 10px;">
+            <a th:href="@{/goodsdetail(id=${goods01.id},busertable_id=${useradmin.id})}" th:target="_blank"><img width="140px" height="140px" style="border-radius: 20px;" th:src="${goods01.gpicture}" ></a>
+          </div>
+          <div style="margin-left: 10px;margin-top: 10px;width: 170px;height: 140px;">
+            <span th:text="${goods01.gmiaoshu}" style="font-size: 15px;width:150px;height: auto;word-wrap: break-word;word-break: break-all;"></span><br>
+            <div>
+              <span style="font-size: 12px;color: #ef6709;border: solid rgba(246,11,11,0.5) 1px;">运送费险</span>
+            </div>
+          </div>
+          <div style="position: absolute;;margin-top: 110px;margin-left: 162px;">
+            <p style="font-size: 30px;color: coral;" th:text="${goods01.grprice}"></p>
+          </div>
+        </div>
+        <!--                <td >-->
+        <!--                    <div class="box-a5-b1" style="margin-left: 365px;">-->
+        <!--                        <div style="margin-top: 10px;margin-left: 10px;">-->
+        <!--                            <img width="140px" height="140px" style="border-radius: 20px;" th:src="21.jpg">-->
+        <!--                        </div>-->
+        <!--                        <div style="margin-left: 10px;margin-top: 10px;width: 170px;height: 140px;">-->
+        <!--                            <span style="font-size: 18px;width:150px;height: auto;word-wrap: break-word;word-break: break-all;">aaaaaaaaaaaaaaaaaaaaaaaaaa</span>-->
+        <!--                        </div>-->
+        <!--                        <div style="position: absolute;margin-top: 80px;margin-left: 162px;">-->
+        <!--                            <p style="font-size: 30px;color: coral;">$&nbsp;80</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </td>-->
+        <!--                <td >-->
+        <!--                    <div class="box-a5-b1" style="margin-left: 725px;">-->
+        <!--                        <div style="margin-top: 10px;margin-left: 10px;">-->
+        <!--                            <img width="140px" height="140px" style="border-radius: 20px;" th:src="21.jpg">-->
+        <!--                        </div>-->
+        <!--                        <div style="margin-left: 10px;margin-top: 10px;width: 170px;height: 140px;">-->
+        <!--                            <span style="font-size: 18px;width:150px;height: auto;word-wrap: break-word;word-break: break-all;">aaaaaaaaaaaaaaaaaaaaaaaaaa</span>-->
+        <!--                        </div>-->
+        <!--                        <div style="position: absolute;margin-top: 80px;margin-left: 162px;">-->
+        <!--                            <p style="font-size: 30px;color: coral;">$&nbsp;80</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </td>-->
+      </div>
+    </div>
+  </div>
+  <div style="width:295px;height: 1980px;background-color: rgba(216, 216, 216, 0.968);margin-left: 1380px;position: absolute;display: inline-flex;">
+    <img width="295px" height="1000px" th:src="20.jpg">
+  </div>
+</div>
+</body>
+<style>
+  .body{
+    background-color: rgba(216, 216, 216, 0.968);
+  }
+  .box-a5-b1{
+    display: inline-flex;
+    background-color: rgb(247, 249, 250);
+    width: 343px;
+    height: 160px;
+    /*position: absolute;*/
+    border-radius: 20px;
+    border: solid rgba(255, 255, 255, 0.5) 2px;
+    margin-top: 15px;
+    margin-left: 15px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  .box-a5-b1:hover{
+    border: solid rgb(254, 117, 54) 2px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  .box-a5{
+    margin-left: 20px;
+    /*word-wrap: break-word;word-break: break-all;*/
+    width: 1100px;
+    height: auto;
+  }
+  .box-a4-b2-c2-e8{
+    position: absolute;
+    display: inline-block;
+    margin-top: 210px;
+    margin-left: 210px;
+  }
+  .box-a4-b2-c2-e7{
+    position: absolute;
+    display: inline-block;
+    margin-top: 210px;
+    margin-left: 150px;
+  }
+  .box-a4-b2-c2-e6{
+    position: absolute;
+    display: inline-block;
+    margin-top: 210px;
+    margin-left: 90px;
+  }
+
+  .box-a4-b2-c2-e5{
+    position: absolute;
+    display: inline-block;
+    margin-top: 210px;
+    margin-left: 30px;
+  }
+  .box-a4-b2-c2-e4{
+    position: absolute;
+    display: inline-block;
+    margin-top: 150px;
+    margin-left: 150px;
+  }
+  .box-a4-b2-c2-e3{
+    position: absolute;
+    display: inline-block;
+    margin-top: 150px;
+    margin-left: 75px;
+  }
+  .box-a4-b2-c2-e2{
+    position: absolute;
+    display: inline-block;
+    margin-top: 150px;
+    margin-left: 0px;
+  }
+  .box-a4-b2-c2-e1{
+    display: inline-block;
+    position: absolute;
+    padding-left: 95px;
+    padding-top: 35px;
+  }
+  /* 轮播图 */
+  .shell {
+    width: 500px;
+    height: 290px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 10px 5px 50px rgba(122, 39, 39, 0.39);
+  }
+  li{
+    list-style-type:none;
+  }
+
+  .images {
+    padding-left: 0px;
+    margin-top: 0px;
+    width: 500%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: .2s;
+  }
+
+  .img {
+    width: 100%;
+    background-size: cover;
+  }
+
+  .img:nth-child(1) {
+    background-image: url("https://img2.baidu.com/it/u=1140451732,2641530555&fm=253&fmt=auto&app=138&f=GIF?w=950&h=500");
+
+  }
+
+  .img:nth-child(2) {
+    background-image: url("https://picnew12.photophoto.cn/20180919/taobaotianmaoxiangbaolunbobanner-30678342_1.jpg");
+  }
+
+  .img:nth-child(3) {
+    background-image: url("https://img2.baidu.com/it/u=625246850,2045897680&fm=253&fmt=auto&app=138&f=JPEG?w=820&h=333");
+  }
+
+  .img:nth-child(4) {
+    background-image: url("https://picnew9.photophoto.cn/20150725/xiaoqingxinnvzhuangquanpingdahaibaolunbohaibao-27445854_1.jpg");
+  }
+
+  .img:nth-child(5) {
+    background-image: url("https://img.zcool.cn/community/017618554460300000019ae90ab7e8.jpg@2o.jpg");
+  }
+
+  .min {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0px;
+    width: 30%;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .m {
+    width:2px;
+    height: 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: solid rgba(255, 255, 255, 0.5) 5px;
+    background-color: #fff;
+  }
+
+  .button {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+  }
+
+  .button-left,
+  .button-right {
+    font-size: 20px;
+    background-color: rgb(64, 64, 64);
+    padding: 0 10px;
+    cursor: pointer;
+    line-height: 700px;
+    color: #fff;
+  }
+  .bg{
+    /* width: 100vw;
+    height: 100vh; */
+    /* background-image: url(./img/04.png); */
+    z-index: -9999;
+    position: absolute;
+    filter:blur(12px);
+    opacity: .5;
+
+  }
+  /* /// */
+  .box-a4-b2-c2{
+    display: inline-block;
+    position:absolute;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 230px;
+    height: 290px;
+    border-radius: 20px;
+  }
+  .box-a4-b2-c1{
+    width:500px;
+    /* background-color: aqua; */
+    height: 290px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  /* !import增加了其优先级 */
+  .q1:hover{
+    color: rgb(252, 252, 252) !important;
+  }
+  .box-a4-b1{
+    width:750px;
+    height: 50px;
+    background-color: rgb(247, 249, 250);
+    margin-left: 20px;
+    margin-top: 40px;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .box-a4{
+    display: inline-block;
+    position: absolute;
+  }
+  .box-a3-b1{
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+  span{
+    color: rgb(102, 102, 98);
+    font-size: 14px;
+  }
+  p{
+    color: rgb(102, 102, 98);
+    font-size: 14px;
+  }
+  span:hover{
+    color:rgb(243, 107, 10);
+    cursor: pointer;
+  }
+  p:hover{
+    color:rgb(243, 107, 10);
+    cursor: pointer;
+  }
+  .box-a3{
+    display: inline-block;
+    background-color: rgb(247, 249, 250);
+    width:290px;
+    height: 360px;
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 20px;
+  }
+  .box-a1{
+    display: inline-flex;
+  }
+  .box-a2{
+    display: inline-flex;
+    position:absolute;
+    margin-left: 50px;
+    width: 880px;
+    height: 120px;
+  }
+  .box-a2-b1{
+    width: 80%;
+    height: 40%;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    border-color: rgb(243, 107, 10);
+    margin-top: 33px;
+    border:2px solid rgb(255, 128, 0);
+  }
+  input{
+    margin-top: 1px;
+    width:80%;
+    height: 90%;
+    border-radius: 30px;
+    border:none;
+    margin-left: 20px;
+  }
+  input:focus{
+    outline: none;
+    border-bottom-color: bisque;
+  }
+  button{
+    position: absolute;
+    height: 36%;
+    margin-top: 2px;
+    width:90px;
+    border-radius: 30px;
+    border:none;
+    background-color:rgb(242, 96, 11);
+    font-size:18px;
+    font-weight: bolder;
+    color: aliceblue;
+    margin-left: 25px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  button:hover{
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  a{
+    text-decoration: none;
+  }
+</style>
+<script>
+
+  let left = document.querySelector(".button-left")
+  let right = document.querySelector(".button-right")
+  let m = document.querySelectorAll(".m")
+  let images = document.querySelector(".images")
+  // 我们先设置一个index用来计算和控制图片的位置，再设置一个time作为定时器
+  let index = 0
+  let time// 在这里我们先创建一个position为复用函数，作用就是结合index来定义当前图片的位置的
+  function position() {
+    images.style.left = (index * -100) + "%"
+  }
+  // 然后我们创建一个复用函数add为加函数，如果当前图片的位置值index大于等于当前图片数量的话，
+  // 就说明超出了计算范围，所以得清零，如若不然index就加一
+  function add() {
+    if (index >= m.length - 1) {
+      index = 0
+    } else {
+      index++
+    }
+  }
+  // 反之desc为减函数，如果当前图片的位置值index小于1了，那么他的值就反弹到最顶端，也就是轮播图的最后面，如若不然index就减一
+  function desc() {
+    if (index < 1) {
+      index = m.length - 1
+    } else {
+      index--
+    }
+  }
+  // 创建一个timer来当做复用时间的函数，，每隔3秒钟index就加一，然后加入增加add函数和desc函数来判断一下，再加入定位函数
+  function timer() {
+    time = setInterval(() => {
+      index++
+      desc()
+      add()
+      position()
+    }, 3000)
+  }
+  // 接下来我们设置一下按钮，left为左边的按钮，因为点击时图片会反方向倒退，所以我们套入desc减函数进去，顺便定位一下
+  // 点击的时候我们必须先把定时器给停掉再重新执行一遍，不然会在你点击下一张图片时，定时器倒计时一到也跟着生效，这样子就会连跳两张图片了
+  left.addEventListener("click", () => {
+    desc()
+    position()
+    clearInterval(time)
+    timer()
+  })
+  // 右边的按钮和左边也是差不多
+  right.addEventListener("click", () => {
+    add()
+    position()
+    clearInterval(time)
+    timer()
+  })
+  // 在弄好左右两个按钮的时候，我们还需要生效下面的小图片按钮，
+  // 首先我们先遍历一遍，然后获取当前点击的那个小图片按钮的值并赋值给index，这样子就可以随之跳转
+  for (let i = 0; i < m.length; i++) {
+    m[i].addEventListener("click", () => {
+      index = i;
+      position();
+      clearInterval(time)
+      timer()
+    })
+  }
+  // 最后的最后我们将定时器开起来，这样子图片就可以自动轮播啦
+  // timer()
+
+
+
+</script>
+</html>

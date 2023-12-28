@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{css/bootstrap-theme.min.css}" />
+</head>
+<body>
+<div>
+  <div class="nanfeng">
+    <img width="100px" height="100px" th:src="13.jpg">
+  </div>
+  <form method="post" th:action="@{/shopping(goodstable_id=${goodsdetail[0].id},busertable_id=${busertable_id})}">
+  <div style="margin-left: 200px;margin-top: 15px;">
+    <p style="font-weight: bold;">输入收获地址</p>
+    <div style="font-size: 14px;display: inline-flex;margin-top: 10px;">
+      <p>所在地区</p>
+      <input name="province" value="" class="input1" type="text" placeholder="省">
+      <input name="city" value="" class="input1" type="text" placeholder="市">
+      <input name="county" value="" class="input1" type="text" placeholder="区或县">
+    </div>
+    <div style="font-size: 14px;margin-top: 10px;">
+      <p style="display: inline-flex;position: absolute;">详细地址</p>
+      <input name="detail_address" value="" type="text" style="height: 70px;width: 400px;display: inline-flex;margin-left: 100px;margin-top: 20px;">
+    </div>
+    <div style="font-size: 14px;display: inline-flex;margin-top: 10px;">
+      <p>购买数量</p>
+      <input value="" name="ssum" class="input1" type="text" placeholder="数量">
+    </div>
+    <div style="font-size: 14px;margin-top: 10px;">
+      <p style="display: inline-flex;">收货人姓名</p>
+      <input value="" name="sname" style="margin-left: 30px;display: inline-flex;" class="input1" type="text" placeholder="姓名">
+    </div>
+    <div style="font-size: 14px;display: inline-flex;margin-top: 10px;">
+      <p>电话号码</p>
+      <input value="" name="sphone" class="input1" type="text" placeholder="手机号">
+    </div>
+  </div>
+  <div style="margin-left: 200px;margin-top: 15px;">
+    <p style="font-weight: bold;">确认订单信息</p>
+    <div style="display: inline-flex;">
+      <p style="font-weight: bold;margin-left: 175px;">商品信息</p>
+      <p style="font-weight: bold;margin-left: 575px;">原价</p>
+      <p style="font-weight: bold;margin-left: 175px;">金额</p>
+
+    </div>
+    <div class="box-a2-b1">
+      <div style="display: inline-flex;margin-left: 30px;">
+        <img style="margin-top: 12px;" width="15px" height="15px" th:src="15.jpg">&nbsp;&nbsp;
+        <p style="font-size: 13px;margin-top: 10px;">店铺：ZF旗舰店</p>
+      </div>
+      <P style="color: #fc7358;display: inline-flex;margin-left: 50px;font-size: 14px;border: #fc7358 solid 1px;">满200减50</P>
+      <hr style="border-style: outset;border-color: rgb(252, 253, 249);">
+      <div style="display: inline-flex;">
+        <img style="margin-left: 40px;margin-top: 10px;" width="100px" height="100px" th:src="${goodsdetail[0].gpicture}">
+        <div style="width: 300px;word-wrap: break-word;word-break: break-all;">
+          <p style="margin-left: 30px;" th:text="${goodsdetail[0].gmiaoshu}"></p>
+        </div>
+        <p style="margin-left: 320px;" th:text="${goodsdetail[0].goprice}"></p>
+        <p style="margin-left: 145px;" th:text="${goodsdetail[0].grprice}"></p>
+      </div>
+    </div>
+    <button type="submit">结算</button>
+  </div>
+  </form>
+</div>
+</body>
+<style>
+  .nanfeng{
+    margin-left: 200px;
+  }
+  .input1{
+    height: 20px;
+    margin-top: 11px;
+    margin-left: 50px;
+    border-radius: 5px;
+    border-color: rgb(244, 246, 248);
+  }
+  button{
+    margin-top: 20px;
+    margin-left: 1100px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    background-color: #fc7358;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  button:hover{
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  /* .shell{
+      height:440px;
+      margin: 8px auto;
+      border-radius: 10px;
+      overflow-y:auto ;
+  }
+  .shell::-webkit-scrollbar {
+  width: 10px;
+  height: 440px;
+  } */
+  .box-a2-b1{
+    width: 1230px;
+    height: 200px;
+    background-color: azure;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  p:hover{
+    cursor: pointer;
+  }
+  .box-a2{
+    width: 1290px;
+    height: 650px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 30px;
+    margin-left: 200px;
+    border-radius: 20px;
+  }
+  .box-a1{
+    background-color: rgb(255, 255, 255);
+    /* width: 1290px; */
+  }
+</style>
+</html>

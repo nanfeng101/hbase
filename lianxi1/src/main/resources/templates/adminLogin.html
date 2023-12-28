@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--管理员登录页面-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>后台登录界面</title>
+  <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{css/bootstrap-theme.min.css}" />
+</head>
+<body>
+<div class="card">
+  <div class="img1">
+    <img width="300px" height="400px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F2b6a760c-bd89-4a30-a16b-3d0b315369f2%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1689063419&t=13b9c6b9379f3eaa2d598891741dc96b"/>
+  </div>
+  <div class="text1">
+    <form th:action="@{/adminLogin}" method="post">
+      <div class="card-a0">
+        <p>后台登录</p>
+      </div>
+      <div class="card-a1">
+        <input type="text" calss="form_input1" name="username" value="" placeholder="账号"/>
+      </div>
+      <div class="card-a2">
+        <input type="password" calss="form_input1" name="password" value="" placeholder="密码"/>
+      </div>
+      <div class="card-a3">
+        <button class="button3" type="submit" >登录</button>
+      </div>
+    </form>
+    </div>
+</div>
+</body>
+<style>
+  body{
+    background-image: linear-gradient(to right,#89f7fe 40%, #4f94f4 60%);
+
+  }
+  .img1{
+    display: inline-block;
+    position: absolute;
+  }
+  .text1{
+    display: inline-block;
+  }
+
+  .card{
+    width:700px;
+    height: 400px;
+    background-color: #ffffff;
+    margin-left: 390px;
+    margin-top: 150px;
+    box-shadow: inset 4px 4px 4px #d1d9e6;
+  }
+  .card-a0{
+    padding-top: 20px;
+    padding-left: 455px;
+  }
+  p{
+    font-size: 20px;
+    color: #21d0c5;
+    font-weight: bolder;
+
+  }
+  .card-a1{
+    padding-top:60px;
+    padding-left: 400px;
+  }
+  .card-a2{
+    padding-top:30px;
+    padding-left: 400px;
+  }
+  .card-a3{
+    padding-top:30px;
+    padding-left: 435px;
+  }
+  input{
+    width:200px;
+    height:35px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-color:#21d0c5;
+    color: #89f7fe;
+  }
+  .button3{
+    border-radius: 20px;
+    background-image: linear-gradient(to right,#89f7fe 40%, #4f94f4 60%);
+    border-style: none;
+    width:130px;
+    height:35px;
+  }
+  input:focus{
+    border-color: #4f94f4;
+    outline: none;
+  }
+</style>
+</html>

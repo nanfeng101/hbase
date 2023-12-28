@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--商品管理页面-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>后台界面</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{css/bootstrap-theme.min.css}" />
+</head>
+<body>
+<div>
+    <ul>
+        <div class="dropdown">
+
+            <a class="dropbtn" style="color:#ffffff;text-decoration: none;" th:href="@{/goodstype}" >类型管理</a>
+        </div>
+        <div class="dropdown">
+            <a class="dropbtn" style="color: #796363">商品管理</a>
+        </div>
+        <div class="dropdown">
+            <a class="dropbtn">查询订单</a>
+        </div>
+        <div class="dropdown">
+            <a class="dropbtn" style="color:#ffffff;text-decoration: none;" th:href="@{/useradmin}" >用户管理</a>
+        </div>
+        <div class="dropdown">
+            <a class="dropbtn">安全退出</a>
+        </div>
+    </ul>
+</div>
+<main class="table">
+    <section class="header">
+        <h1>商品管理</h1>
+        <div class="input-group">
+            <input type="search" placeholder="Search Data...">
+            <img th:src="1.png">
+        </div>
+    </section>
+    <section class="shell">
+        <table>
+            <thead>
+            <tr>
+                <th><span>名称</span></th>
+                <th><span>图片</span></th>
+                <th><span>原价</span></th>
+                <th><span>折扣价</span></th>
+                <th><span>库存量</span></th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="goods:${goods2}" th:object="${goods2}">
+                <td><span  th:with="gname=${goods.gname}" th:text="${goods.gname}"></span></td>
+                <td><img th:with="gpicture=${goods.gpicture}" th:src="${goods.gpicture}"></td>
+                <td><span th:with="goprice=${goods.goprice}" th:text="${goods.goprice}"></span></td>
+                <td><span th:with="grprice=${goods.grprice}" th:text="${goods.grprice}"></span></td>
+                <td><span th:with="gstore=${goods.gstore}" th:text="${goods.gstore}"></span></td>
+
+                <td>
+                    <button  onclick="tianjia()" style="background-color: #ff1741;border: none;height: 25px;width: 40px;border-radius: 5px;">添加</button>
+                    <button style="background-color: #f0fc00;border: none;height: 25px;width: 40px;border-radius: 5px;"><a style="color: inherit;text-decoration: none;" th:href="@{/detail(id=${goods.id})}" >详情</a></button>
+                    <button style="background-color: #00d4f9;border: none;height: 25px;width: 40px;border-radius: 5px;"><a style="color: inherit;text-decoration: none;" th:href="@{/updategoods(id=${goods.id})}">修改</a></button>
+                    <button onclick="delete1()" style="background-color: #a217ff;border: none;height: 25px;width: 40px;border-radius: 5px;"><a style="color: inherit;text-decoration: none;" th:href="@{/delete(id=${goods.id})}" >删除</a></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<!--添加弹窗页面-->
+<div id="show" class="show-box">
+    <div>
+        <div class="show-box-a1">
+        <span>添加商品</span>
+        <button class="btn" onclick="closeBox()">X</button>
+        <div>
+            <form th:action="@{/home1}" method="post" enctype="multipart/form-data">
+                商品名称&nbsp;&nbsp;<input id="a"  class="input-a2" name="gname" value="" placeholder="请输入名称"/></br>
+                商品原价&nbsp;&nbsp;<input id="b" class="input-a2" name="gorice" value="" placeholder="0.0"/></br>
+                商品现价&nbsp;&nbsp;<input id="c" class="input-a2" name="gprice" value="" placeholder="0.0"/></br>
+                商品库存&nbsp;&nbsp;<input id="e" class="input-a2" name="gstore" value="" placeholder="0"/></br>
+                商品描述&nbsp;&nbsp;<input id="f" class="input-a2" name="gmiaoshu" value="" placeholder="0"/></br>
+                商品图片&nbsp;&nbsp;<input type="file" class="input-a2" name="giamg"  placeholder="url"/></br>
+                <div class="show-box-b1">
+                    是否推荐&nbsp;&nbsp;<input type="radio" name="rec" value="1"/>&nbsp;是
+                    &nbsp;&nbsp;<input type="radio" name="rec" checked value="0"/>&nbsp;否<br>
+                </div>
+                <div class="show-box-b1">
+                    是否广告&nbsp;&nbsp;<input type="radio" name="guagao" value="1"/>&nbsp;是
+                    &nbsp;&nbsp;<input type="radio" name="guagao" checked value="0"/>&nbsp;否<br>
+                </div>
+                <div class="show-box-b2">
+                    商品类型&nbsp;&nbsp;<select name="type">
+                    <option>女装</option>
+                    <option>美妆</option>
+                    <option>男装</option>
+                    <option>手机</option>
+                    <option>电器</option>
+                    <option>食品</option>
+                    <option>医药</option>
+                    <option>玩具</option>
+
+                </select>
+                </div>
+                <div>
+                    <button class="button-a2" type="submit" onclick="aa1()">添加</button>
+                    <button class="button-a2">重置</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    // function tijiao(){
+    //     $.ajax({
+    //         url:"home1",
+    //         type:post,
+    //         // success:function (add){
+    //         //     if(add=1){
+    //         //         alert("添加成功");
+    //         //     }
+    //         //     else{
+    //         //         alert("添加失败");
+    //         //     }
+    //         // }
+    //     })
+    // }
+    function tianjia(){
+        var showbox = document.getElementById("show");showbox;
+        showbox.style.display="inline-flex";
+    }
+    function closeBox(){
+        var showbox1 = document.getElementById("show");showbox1;
+        showbox1.style.display="none";
+
+    }
+    function aa1(){
+        var gname=document.getElementById("a").value;
+        var gorice=document.getElementsById("b").value;
+        var gprice=document.getElementsById("c").value;
+        var gstore=document.getElementsById("e").value;
+        if(gname==null || gorice==null || gprice==null || gstore==null){
+            alert("添加失败，值不能为空");
+        }
+        else{
+            alert("添加成功");
+        }
+    }
+    function delete1(){
+        alert("删除成功");
+    }
+</script>
+<style>
+    /*添加弹窗页面的css*/
+    .show-box{
+        display: none;
+        position: fixed;
+        background-color: rgba(241, 244, 245, 0.63);
+        left: 500px;
+        top: 100px;
+        border-radius: 10px;
+    }
+    .input-a2{
+        margin-top: 20px;
+        border-left-style: none;
+        border-top-style: none;
+        border-right-style: none;
+        border-bottom-width: 3px;
+        border-bottom-color:aqua
+    }
+    .input-a2:focus{
+        outline: none;
+        border-bottom-color: bisque;
+    }
+    .button-a2{
+        border:none;
+        background-color: rgba(22, 212, 250, 0.634);
+        border-radius: 6px;
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+    .show-box-b1,.show-box-b2{
+        margin-top: 10px;
+    }
+    .btn{
+        margin-left: 300px;
+    }
+    /*.show-box-a1{*/
+    /*    background-color: #006b21;*/
+    /*}*/
+    .coy1{
+        width: 500px;
+        height: 600px;
+        flex-shrink: 0;
+    }
+    .box{
+        width: 500px;
+        overflow: hidden;
+        margin: auto;
+        display: flex;
+    }
+    ul{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        overflow:hidden;
+        background-color:#333;
+    }
+
+    .dropbtn
+    {
+        display:inline-block;
+        color:white;
+        text-align:center;
+        padding:14px 16px;
+        text-decoration:none;
+        cursor: pointer;
+    }
+
+    .dropdown:hover, .dropbtn
+    {
+        background-color:#333;
+    }
+    .dropbtn:hover{
+        background-color: rgb(25, 139, 246);
+    }
+
+    .dropdown
+    {
+        display:inline-block;
+    }
+
+    .dropdown-content
+    {
+        display:none;
+        position:absolute;
+        background-color:#f9f9f9;
+        min-width:160px;
+        box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+
+    .dropdown-content a
+    {
+        color:black;
+        padding:12px 16px;
+        text-decoration:none;
+        display:block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content
+    {
+        display:block;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        background: url(https://www.sanyangbzj.com/uploadfile/2021/0901/20210901112008_80167.jpeg) center / cover;
+        /*display: flex;*/
+        justify-content: center;
+        align-items: center;
+    }
+
+    main.table {
+        width: 77vw;
+        height: 80vh;
+        background-color: #fff5;
+        box-shadow: 0 8px 16px #0005;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .header {
+        width: 100%;
+        height: 10%;
+        background-color: #fff4;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .input-group {
+        width: 35%;
+        height: 50%;
+        background-color: #fff5;
+        padding: 0 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .2s;
+    }
+
+    .header .input-group:hover {
+        width: 45%;
+        background-color: #fff8;
+        box-shadow: 0 5px 40px #0002;
+    }
+
+    .header .input-group img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header .input-group input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .shell {
+        width: 95%;
+        max-height: calc(90% - 25px);
+        background-color: #fffb;
+        margin: 8px auto;
+        border-radius: 10px;
+        overflow: auto;
+        /*overflow: overlay;*/
+    }
+
+    .shell::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    .table{
+        margin-left: 170px;
+        margin-top:50px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td img {
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    table,
+    th,
+    td {
+        border-collapse: collapse;
+        padding: 20px;
+        text-align: left;
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: #d5d1defe;
+        cursor: pointer;
+    }
+
+    /* 偶数行背景色 */
+    tbody tr:nth-child(even) {
+        background-color: #0000000b;
+    }
+
+    tbody tr:hover {
+        background-color: #fff6 !important;
+    }
+
+    .button {
+        padding: 5px 0;
+        border-radius: 40px;
+        text-align: center;
+    }
+
+    tr:nth-child(4n) .button {
+        background-color: #86e49d;
+        color: #006b21;
+    }
+
+    tr:nth-child(4n-1) .button {
+        background-color: #ebc474;
+    }
+
+    tr:nth-child(4n+1) .button {
+        background-color: #d893a3;
+        color: #b30021;
+    }
+
+    tr:nth-child(4n+2) .button {
+        background-color: #6fcaea;
+    }
+
+</style>
+</html>

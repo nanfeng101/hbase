@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:https="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${goodsdetail[0].gname}"></title>
+  <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{css/bootstrap-theme.min.css}" />
+</head>
+<body>
+<div>
+  <div class="box-a1">
+    <img style="margin-left: 200px;" width="100px" height="100px" th:src="nanfeng.jpg">
+  </div>
+  <div class="box-a2">
+    <img style="margin-left: 20px;margin-top: 10px;border-radius: 50%;" width="60px" height="60px" th:src="15.jpg">
+    <p style="margin-left: 20px;margin-top: 20px;font-size: 25px;font-weight: bold;">ZF旗舰店</p>
+    <div style="display: block;margin-left: 50px;margin-top: 20px;">
+      <p style="color: rgb(167, 167, 166);">物品描述</p>
+      <p>4.8</p>
+    </div>
+    <div style="display: block;margin-left: 50px;margin-top: 20px;">
+      <p style="color: rgb(167, 167, 166);">卖家服务</p>
+      <p>4.8</p>
+    </div>
+    <div style="display: block;margin-left: 50px;margin-top: 20px;">
+      <p style="color: rgb(167, 167, 166);">物流服务</p>
+      <p>4.8</p>
+    </div>
+  </div>
+  <div class="box-a3">
+    <img style="margin-left: 20px;margin-top: 20px;border-radius: 30px;" width="500px" height="560px" th:src="${goodsdetail[0].gpicture}">
+    <div class="box-a3-b1">
+      <p style="font-size: 18px;font-weight: bold;" th:text="${goodsdetail[0].gmiaoshu}"></p>
+      <div style="border-radius: 20px;width: 400px;height: 130px;" class="aa1">
+        <p style="margin-left: 10px;font-size: 27px;font-weight: bold;color: rgb(255, 255, 255);">天猫618</p>
+        <div style="display: inline-flex;width:380px;height: 50px;background-color: aliceblue;margin-left: 10px;border-radius: 10px;">
+          <p style="margin-top: 10px;margin-left: 20px;font-size: 25px;color: chocolate;" th:text="${goodsdetail[0].goprice}"></p>
+          <div style="display: inline-flex;width: 120px;height: 30px;background-color: chocolate;margin-top: 10px;margin-left: 20px;border-radius: 50px;">
+            <p style="margin-top: 5px;font-weight: bold;color: rgb(255, 255, 255);;margin-left: 10px;">折扣价</p>
+            <p style="margin-top: 5px;margin-left: 10px;font-weight: bold;color: rgb(255, 255, 255);" th:text="${goodsdetail[0].grprice}"></p>
+          </div>
+        </div>
+      </div>
+      <div style="display: inline-flex;margin-top: 30px;">
+        <p>配送：</p>
+        <p>河南省</p>&nbsp;&nbsp;&nbsp;
+        <p>至</p>&nbsp;&nbsp;&nbsp;
+        <input value="" placeholder="请输入地址">&nbsp;&nbsp;&nbsp;
+        <p>快递：</p>
+        <p>免运费</p>
+      </div>
+      <div style="margin-top: 30px;">
+        <div style="display: inline-flex;">
+          <p>库存：</p>&nbsp;&nbsp;&nbsp;
+          <p th:text="${goodsdetail[0].gstore}"></p>
+        </div>
+      </div>
+      <div style="margin-top: 30px;">
+        <div style="display: inline-flex;">
+          <a th:href="@{/shopping1(goodstable_id=${goodsdetail[0].id},busertable_id=${busertable_id})}"><button class="button1">购买</button></a>
+          <a th:href="@{/join(goodstable_id=${goodsdetail[0].id},busertable_id=${busertable_id})}"><button class="button2">加入购物车</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<style>
+  .aa1{
+    background-image: url("https://img0.baidu.com/it/u=159936946,4177100145&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=500");
+  }
+  .button2{
+    width: 150px;
+    height: 50px;
+    border:none;
+    border-top-right-radius: 50px;
+    background-color: rgb(239, 224, 14);
+    border-bottom-right-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+  }
+  .button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+  }
+  .button1{
+    width: 150px;
+    height: 50px;
+    border:none;
+    border-top-left-radius: 50px;
+    background-color: rgb(255, 83, 25);
+    border-bottom-left-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  input{
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+  }
+  .box-a3-b1{
+    width: 640px;
+    height: 500px;
+    background-color: #f7f9fa;
+    margin-top: 20px;
+    margin-left: 100px;
+    border-radius: 20px;
+  }
+  .box-a3{
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-left: 200px;
+    width: 1280px;
+    height: 600px;
+    border-radius: 30px;
+    display: inline-flex;
+  }
+  .box-a2{
+    background-color: rgb(251, 251, 251);
+    width: 1280px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 200px;
+    border-radius: 50px;
+    display: inline-flex;
+  }
+  .box-a1{
+    background-color: rgb(255, 255, 255);
+  }
+  body{
+    background-color: rgb(189, 189, 189);
+  }
+</style>
+</html>

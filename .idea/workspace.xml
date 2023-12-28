@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e4769ed-013f-429c-b65e-92614e8621ec" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="spring-beans.schema" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2QmRVmJbGaYqAhUOf1KnReQ1ihl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8 (3)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/music_project/untitled&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;问题&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a88aaaec26607046b35abd14b1cec9f1&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springboot-lianxi1\lianxi1\src\main\resources\static" />
+      <recent name="E:\springboot练习\lianxi1\src\main\resources\static" />
+      <recent name="E:\springboot练习\lianxi1\src\main\resources\static\css" />
+      <recent name="E:\springboot练习\lianxi1\src\main\resources\static\images" />
+      <recent name="E:\springboot练习\lianxi1\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\springboot-lianxi1\lianxi1\src\main\resources\static" />
+      <recent name="E:\springboot练习\lianxi1\src\main\resources\static\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.lianxi1.controller" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Lianxi1Application">
+    <configuration name="Lianxi1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="lianxi1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.lianxi1.Lianxi1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lianxi2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="lianxi2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.lianxi2.Lianxi2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="7e4769ed-013f-429c-b65e-92614e8621ec" name="变更" comment="" />
+      <created>1685956795892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685956795892</updated>
+      <workItem from="1685956797020" duration="53000" />
+      <workItem from="1685957428047" duration="99000" />
+      <workItem from="1685957553347" duration="3647000" />
+      <workItem from="1686042460048" duration="1447000" />
+      <workItem from="1686044322701" duration="9999000" />
+      <workItem from="1686059688897" duration="24000" />
+      <workItem from="1686060481862" duration="594000" />
+      <workItem from="1686132706572" duration="2589000" />
+      <workItem from="1686210274019" duration="16123000" />
+      <workItem from="1686268193239" duration="7184000" />
+      <workItem from="1686385184162" duration="24087000" />
+      <workItem from="1686463791548" duration="16869000" />
+      <workItem from="1686529813073" duration="4808000" />
+      <workItem from="1686537995682" duration="23263000" />
+      <workItem from="1686613963665" duration="2156000" />
+      <workItem from="1686616136440" duration="43000" />
+      <workItem from="1686616193681" duration="34000" />
+      <workItem from="1686616241204" duration="3382000" />
+      <workItem from="1686641962305" duration="12258000" />
+      <workItem from="1686733567661" duration="6934000" />
+      <workItem from="1686741363786" duration="2343000" />
+      <workItem from="1686794279521" duration="7099000" />
+      <workItem from="1686802811188" duration="12000" />
+      <workItem from="1686817026103" duration="25000" />
+      <workItem from="1686873334596" duration="672000" />
+      <workItem from="1686874431826" duration="2693000" />
+      <workItem from="1686985547333" duration="3827000" />
+      <workItem from="1686989393010" duration="5887000" />
+      <workItem from="1686995362928" duration="263000" />
+      <workItem from="1686995638042" duration="3112000" />
+      <workItem from="1686998764746" duration="4525000" />
+      <workItem from="1687008562427" duration="2816000" />
+      <workItem from="1687072512306" duration="7552000" />
+      <workItem from="1687091531538" duration="457000" />
+      <workItem from="1687174760570" duration="7427000" />
+      <workItem from="1687218141418" duration="4519000" />
+      <workItem from="1687243384321" duration="6643000" />
+      <workItem from="1687260930018" duration="7682000" />
+      <workItem from="1687338272099" duration="4922000" />
+      <workItem from="1688201912904" duration="2947000" />
+      <workItem from="1688628534708" duration="11772000" />
+      <workItem from="1688712993924" duration="6129000" />
+      <workItem from="1691475242404" duration="6881000" />
+      <workItem from="1691484120034" duration="766000" />
+      <workItem from="1691485197151" duration="1375000" />
+      <workItem from="1691775424613" duration="7300000" />
+      <workItem from="1691810217437" duration="3010000" />
+      <workItem from="1691815330528" duration="3447000" />
+      <workItem from="1691890898811" duration="6661000" />
+      <workItem from="1691918778822" duration="1624000" />
+      <workItem from="1693549141994" duration="4008000" />
+      <workItem from="1693566227230" duration="47000" />
+      <workItem from="1693818143926" duration="443000" />
+      <workItem from="1693819384141" duration="1409000" />
+      <workItem from="1693820807420" duration="40000" />
+      <workItem from="1694848819281" duration="3717000" />
+      <workItem from="1694935053056" duration="12000" />
+      <workItem from="1701943824366" duration="678000" />
+      <workItem from="1702029138932" duration="1468000" />
+      <workItem from="1702112890439" duration="338000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

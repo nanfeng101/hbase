@@ -1,16 +1,21 @@
 package com.example.lianxi1.service;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.example.lianxi1.dao.TypeMapper;
 import com.example.lianxi1.dao.UserGoodsMapper;
 import com.example.lianxi1.pojo.Goods;
 import com.example.lianxi1.pojo.GoodsType;
 import com.example.lianxi1.pojo.User;
 import com.example.lianxi1.pojo.Shopping;
+import com.example.lianxi1.util.RedisIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.List;
@@ -21,6 +26,10 @@ public class UserGoodsServiceImpl implements UserGoodsService {
     private UserGoodsMapper userGoodsMapper;
     @Autowired
     private TypeMapper typeMapper;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
+    @Resource
+    private RedisIdWorker redisIdWorker;
 
     public List<User> acquire1(){
         return userGoodsMapper.acquire();
@@ -56,7 +65,21 @@ public class UserGoodsServiceImpl implements UserGoodsService {
         }
     }
     public List<Goods> detail(int id){
-        return userGoodsMapper.detail(id);
+        String key = "hbase:shop:" + id;
+        String goods = stringRedisTemplate.opsForValue().get(key);
+        if(StrUtil.isNotBlank(goods)){
+            return JSONUtil.toList(goods, Goods.class);
+        }
+        if(goods!=null){
+            return null;
+        }
+        List<Goods> goodsList = userGoodsMapper.detail(id);
+        if(goodsList.size()==0){
+            stringRedisTemplate.opsForValue().set(key,"");
+        }
+        stringRedisTemplate.opsForValue().set(key,JSONUtil.toJsonStr(goodsList));
+
+        return goodsList;
     }
     public void updategoods(HttpServletRequest rquest){
         int id = Integer.parseInt(rquest.getParameter("id"));
@@ -106,12 +129,12 @@ public class UserGoodsServiceImpl implements UserGoodsService {
         String sum1=request.getParameter("ssum");
         String detail_address=request.getParameter("detail_address");
         int ssum=Integer.parseInt(sum1);
-        System.out.println(1111111);
+        Long id = redisIdWorker.nextId("order");
         if(province.equals("") || city.equals("") || county.equals("") || sname.equals("") || sphone.equals("") || sum1.equals("")){
             System.out.println("传入的参数有空值");
         }
         else{
-            userGoodsMapper.shopping(busertable_id,goodstable_id,province,city,county,detail_address,ssum,sname,sphone);
+            userGoodsMapper.shopping(busertable_id,goodstable_id,id,province,city,county,detail_address,ssum,sname,sphone);
         }
     }
 

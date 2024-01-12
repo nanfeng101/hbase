@@ -21,7 +21,7 @@ public interface UserGoodsMapper {
     int number1(@Param("id") int id);
     GoodsType searchType(@Param("typename") String typename);
     List<Goods> searchGoods(@Param("id") int id);
-    void shopping(@Param("goodstable_id") int goodstable_id,@Param("busertable_id") int busertable_id,@Param("province") String province,@Param("city") String city,@Param("county") String county,@Param("detail_address") String detail_address,@Param("ssum") int ssum,@Param("sname") String sname,@Param("sphone") String sphone);
+    void shopping(@Param("goodstable_id") int goodstable_id,@Param("busertable_id") int busertable_id,@Param("id") Long id,@Param("province") String province,@Param("city") String city,@Param("county") String county,@Param("detail_address") String detail_address,@Param("ssum") int ssum,@Param("sname") String sname,@Param("sphone") String sphone);
 
     List<Shopping> payment1(@Param("id1") int id1, @Param("id2") int id2);
 

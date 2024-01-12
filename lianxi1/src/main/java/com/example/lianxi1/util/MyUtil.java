@@ -1,8 +1,10 @@
 package com.example.lianxi1.util;
 
+import org.springframework.stereotype.Component;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+@Component
 public class MyUtil {
     public static String getNewFileName(String oldFileName) {
         int lastIndex = oldFileName.lastIndexOf(".");

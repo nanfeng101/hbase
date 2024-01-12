@@ -43,7 +43,7 @@ public class LoginServiceImpl implements LoginService{
     @Override
     public User Login11(String username, String password) {
         User user = loginMapper.Login11(username, password);
-        if (user != null && user.getUserName().equals(username) && user.getPassword().equals(password)) {
+        if (user != null && user.getUsername().equals(username) && user.getPassword().equals(password)) {
             return user;
         }
         return null;
